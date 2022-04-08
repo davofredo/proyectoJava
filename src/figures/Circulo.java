@@ -1,4 +1,4 @@
-package figuras;
+package figures;
 
 import abstracts.FiguraGeometrica;
 import interfaces.IMedidas;
