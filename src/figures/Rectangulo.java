@@ -14,13 +14,13 @@ public class Rectangulo extends FiguraGeometrica implements IMedidas {
     }
 
     @Override
-    public double calcularPerimetro() {
+    public double calculatePerimeter() {
         super.perimetro = (this.base * 2) + (this.altura * 2);
         return super.perimetro;
     }
 
     @Override
-    public double calcularArea() {
+    public double calculateArea() {
         super.area = this.base * this.altura;
         return super.area;
     }

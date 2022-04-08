@@ -9,24 +9,24 @@ public class TrianguloEquilatero extends Triangulo implements IMedidas {
 
     public TrianguloEquilatero(double lado) {
         this.lado = lado;
-        super.altura = this.calcularAltura();
+        super.altura = this.calculateHeight();
     }
 
     @Override
-    public double calcularAltura() {
+    public double calculateHeight() {
         super.altura = (Math.sqrt(3) * this.lado) / 2;
         return super.altura;
     }
 
     @Override
-    public double calcularPerimetro() {
+    public double calculatePerimeter() {
         super.perimetro = this.lado * 3;
         return super.perimetro;
     }
 
     @Override
-    public double calcularArea() {
-        super.area = super.calcularArea(this.lado);
+    public double calculateArea() {
+        super.area = super.calculateArea(this.lado);
         return super.area;
     }
 }

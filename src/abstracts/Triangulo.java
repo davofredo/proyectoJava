@@ -4,9 +4,9 @@ public abstract class Triangulo extends FiguraGeometrica {
 
     protected double altura;
 
-    public abstract double calcularAltura();
+    public abstract double calculateHeight();
 
-    protected double calcularArea(double lado) {
+    protected double calculateArea(double lado) {
         return (lado * this.altura) / 2;
     };
 }

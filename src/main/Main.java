@@ -63,9 +63,9 @@ public class Main {
                 break;
         }
 
-        String mensaje = "The figure was " + figura.getName() + ", its perimter is: " + medidas.calcularPerimetro() + "cm and its a: " + medidas.calcularArea() + "cm2";
+        String message = "The figure was " + figura.getName() + ", its Perimter is: " + medidas.calculatePerimeter() + "cm and its Area: " + medidas.calculateArea()+ "cm2";
 
-        System.out.println(mensaje);
+        System.out.println(message);
     }
 
     public static TypeFiguresEnum getNameFigura(int option) {

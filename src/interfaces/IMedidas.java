@@ -2,7 +2,7 @@ package interfaces;
 
 public interface IMedidas {
 
-    double calcularPerimetro();
+    double calculatePerimeter();
 
-    double calcularArea();
+    double calculateArea();
 }
