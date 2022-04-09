@@ -14,5 +14,10 @@ public class Messages {
     public static final String INPUT_BASE = "Type the base's size %s";
     public static final String INPUT_HEIGHT= "Type the height's length %s";
     public static final String UNIT_CM = "cm";
-
+    
+    //Support
+    public static final String SUPPORT_MESSAGE_1= "The app is receiving maintenance by our technical team";
+    //Exceptions
+    public static final String EXCEPTION_1_ORIGIN= "Input error";
+    public static final String EXCEPTION_1_DESCRIPTION="You typed an option not available";
 }

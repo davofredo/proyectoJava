@@ -1,41 +1,18 @@
 package main;
 import com.at.internship.figures.gui.*;
+import com.at.internship.figures.interfaces.IMedidas;
+import javax.swing.JOptionPane;
+
+import com.at.internship.figures.*;
 public class Main {
 
    public static void main(String[] args) {
    	//Main menu
    
 	LooknFeel looknFeel= new LooknFeel(true);    
-	   
-	   
-//   Window mainWindow = new Window();
-//   mainWindow.generateMainWindow();
-//   
-//   Window FiguresWindow = new Window();
-//   FiguresWindow.generateFiguresWindow();
-	   	   
-//	   MenuOptionsEnum[] menu = MenuOptionsEnum.values();
-//	   StringBuilder sb_menu = new StringBuilder(Messages.MENU);
-//	   for(MenuOptionsEnum m : menu) {
-//	   		sb_menu.append(String.format(Messages.FORMAT_OPTIONS, m.getOption(), m.getName()));
-//	   }
-//	   	
-//	    int numberOption= Integer.parseInt(JOptionPane.showInputDialog(sb_menu.toString()));
-//	    MenuOptionsEnum menu_option= getMenuOpcion(numberOption);
-//	    System.out.println(menu_option);
 
+//	IMedidas medidas = null;
 
-//	   	//Figures Menu
-//	   	StringBuilder sb = new StringBuilder(Messages.INPUT_FIGURE_OPTION);
-//	   	TypeFiguresEnum[] figuras = TypeFiguresEnum.values();
-//
-//        for(TypeFiguresEnum f : figuras) {
-//            sb.append(String.format(Messages.FORMAT_FIGURE_OPTIONS,f.getOption(), f.getName()));
-//        }
-//        int nombreFigura = Integer.parseInt(JOptionPane.showInputDialog(sb.toString()));
-//        TypeFiguresEnum figura  = getNameFigura(nombreFigura);
-//        IMedidas medidas = null;
-//
 //        switch (figura) {
 //            case CIRCLE:
 //                double radio = Double.parseDouble(JOptionPane.showInputDialog(String.format(Messages.INPUT_RADIUS, Messages.UNIT_CM)));

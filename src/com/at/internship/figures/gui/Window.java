@@ -8,52 +8,67 @@ import java.util.NoSuchElementException;
 import javax.swing.JOptionPane;
 
 import com.at.internship.figures.constants.*;
-
+/*
+ * AUTHOR: ALBERTO CRUZ GALVAN INTERN 32
+ * DATE: 20220409
+ * DEC: This class supports to LooknFeel in order to
+ * 		provide all technical tools for showing the GUI interface.
+ ** */
 public class Window {
 	private int option;
 	
 	//Main menu
-	public com.at.internship.figures.constants.MenuOptionsEnum generateMainWindow() {
+	public MenuOptionsEnum generateMainWindow() {
 		
 		MenuOptionsEnum[] menu = MenuOptionsEnum.values();
 		
 		StringBuilder sb_menu = new StringBuilder(Messages.MENU);
 		for(MenuOptionsEnum m : menu) {
-			sb_menu.append(String.format(Messages.FORMAT_OPTIONS, m.getOption(), m.getName()));
+			if (m != MenuOptionsEnum.WRONG) {
+				sb_menu.append(String.format(Messages.FORMAT_OPTIONS, m.getOption(), m.getName()));
+			}
 		}
    	
 	    this.option= Integer.parseInt(JOptionPane.showInputDialog(sb_menu.toString()));
-	    com.at.internship.figures.constants.MenuOptionsEnum menu_option= getMenuOpcion(this.option);
-	    System.out.println(menu_option);
+	    MenuOptionsEnum menu_option= getMenuOption(this.option);
+
 	    
 	    return menu_option;
 	    		
 	}
 	
 	//Figures Menu
-	public com.at.internship.figures.constants.TypeFiguresEnum generateFiguresWindow() {
+	public TypeFiguresEnum generateFiguresWindow() {
 	   	
 	   	StringBuilder sb = new StringBuilder(Messages.INPUT_FIGURE_OPTION);
 	   	TypeFiguresEnum[] figures = TypeFiguresEnum.values();
 	
 	    for(TypeFiguresEnum f : figures) {
-	        sb.append(String.format(Messages.FORMAT_FIGURE_OPTIONS,f.getOption(), f.getName()));
+	        if (f!=TypeFiguresEnum.WRONG) {
+	        	sb.append(String.format(Messages.FORMAT_FIGURE_OPTIONS,f.getOption(), f.getName()));
+	        }
 	    }
 	    
 	    this.option = Integer.parseInt(JOptionPane.showInputDialog(sb.toString()));
-	    com.at.internship.figures.constants.TypeFiguresEnum figure  = getNameFigura(this.option);	
+	    TypeFiguresEnum figure  = getFigureName(this.option);	
 	    System.out.println(figure);
 	    
 	    return figure;
 	}
-		
-		
-	public static MenuOptionsEnum getMenuOpcion(int option) {
+	
+	public void invalidOptionWindow() {
+		JOptionPane.showMessageDialog(null, Messages.EXCEPTION_1_DESCRIPTION,
+			      Messages.EXCEPTION_1_ORIGIN, JOptionPane.ERROR_MESSAGE);
+	}
+	
+	
+	//The Menu option DESC is returned	
+	public static MenuOptionsEnum getMenuOption(int option) {
         return Arrays.stream(MenuOptionsEnum.values()).filter(f -> f.getOption() == option).findFirst().orElseThrow(NoSuchElementException::new);
     }
 	
-	
-	public static TypeFiguresEnum getNameFigura(int option) {
+	//The figure NAME is returned	
+	public static TypeFiguresEnum getFigureName(int option) {
         return Arrays.stream(TypeFiguresEnum.values()).filter(f -> f.getOption() == option).findFirst().orElseThrow(NoSuchElementException::new);
     }
 }

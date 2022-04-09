@@ -5,7 +5,8 @@ public enum TypeFiguresEnum {
     SQUARE("Square", 2),
     RECTANGLE("Rectangle", 3),
     EQUILATERAL_TRIANGLE("Equilateral triangle", 4),
-    ISOSCELES_TRIANGLE("Isosceles triangle", 5);
+    ISOSCELES_TRIANGLE("Isosceles triangle", 5),
+	WRONG("WRONG", 6);
 
     private final String nombre;
     private final int opcion;
