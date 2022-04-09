@@ -5,6 +5,7 @@
 Alberto Israel Cruz Galvan
 
 ## Useful Links
+These links were added because contains web pages related to some important theorical concepts that I applied in this project.
 <div>
     <ul>
         <li>
