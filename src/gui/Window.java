@@ -1,41 +1,49 @@
 package gui; 
 import constants.*;
-import figures.*;
-import interfaces.*;
-import javax.swing.*;
+//import figures.*;
+//import interfaces.*;
+//import javax.swing.*;
 import java.util.Arrays;
 import java.util.NoSuchElementException;
-import gui.*;
+//import gui.*;
 import javax.swing.JOptionPane;
 
 public class Window {
+	private int option;
 	
-
-	
-	public void generateMainWindow() {
+	//Main menu
+	public constants.MenuOptionsEnum generateMainWindow() {
 		
-		   MenuOptionsEnum[] menu = MenuOptionsEnum.values();
-		   StringBuilder sb_menu = new StringBuilder(Messages.MENU);
-		   for(MenuOptionsEnum m : menu) {
-		   		sb_menu.append(String.format(Messages.FORMAT_OPTIONS, m.getOption(), m.getName()));
-		   }
-		   	
-		    int numberOption= Integer.parseInt(JOptionPane.showInputDialog(sb_menu.toString()));
-		    MenuOptionsEnum menu_option= getMenuOpcion(numberOption);
-		    System.out.println(menu_option);
+		MenuOptionsEnum[] menu = MenuOptionsEnum.values();
+		
+		StringBuilder sb_menu = new StringBuilder(Messages.MENU);
+		for(MenuOptionsEnum m : menu) {
+			sb_menu.append(String.format(Messages.FORMAT_OPTIONS, m.getOption(), m.getName()));
+		}
+   	
+	    this.option= Integer.parseInt(JOptionPane.showInputDialog(sb_menu.toString()));
+	    constants.MenuOptionsEnum menu_option= getMenuOpcion(this.option);
+	    System.out.println(menu_option);
+	    
+	    return menu_option;
+	    		
 	}
 	
-	public void generateFiguresWindow() {
-	   	//Figures Menu
+	//Figures Menu
+	public constants.TypeFiguresEnum generateFiguresWindow() {
+	   	
 	   	StringBuilder sb = new StringBuilder(Messages.INPUT_FIGURE_OPTION);
-	   	TypeFiguresEnum[] figuras = TypeFiguresEnum.values();
+	   	TypeFiguresEnum[] figures = TypeFiguresEnum.values();
 	
-	    for(TypeFiguresEnum f : figuras) {
+	    for(TypeFiguresEnum f : figures) {
 	        sb.append(String.format(Messages.FORMAT_FIGURE_OPTIONS,f.getOption(), f.getName()));
 	    }
-	    int nombreFigura = Integer.parseInt(JOptionPane.showInputDialog(sb.toString()));
-	    TypeFiguresEnum figura  = getNameFigura(nombreFigura);	
-		
+	    
+	    this.option = Integer.parseInt(JOptionPane.showInputDialog(sb.toString()));
+	    constants.TypeFiguresEnum figure  = getNameFigura(this.option);	
+	    System.out.println(figure);
+	    
+	    return figure;
 	}
 		
 		

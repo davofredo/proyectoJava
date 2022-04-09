@@ -1,10 +1,10 @@
 package main;
-import constants.*;
-import figures.*;
-import interfaces.*;
-import javax.swing.*;
-import java.util.Arrays;
-import java.util.NoSuchElementException;
+//import constants.*;
+//import figures.*;
+//import interfaces.*;
+//import javax.swing.*;
+//import java.util.Arrays;
+//import java.util.NoSuchElementException;
 import gui.*;
 public class Main {
 
@@ -16,9 +16,7 @@ public class Main {
 	   
 	   Window FiguresWindow = new Window();
 	   FiguresWindow.generateFiguresWindow();
-	   
-	   	
-	   
+	   	   
 //	   MenuOptionsEnum[] menu = MenuOptionsEnum.values();
 //	   StringBuilder sb_menu = new StringBuilder(Messages.MENU);
 //	   for(MenuOptionsEnum m : menu) {
@@ -74,12 +72,5 @@ public class Main {
 //
 //        System.out.println(message);
     }
-
-    public static TypeFiguresEnum getNameFigura(int option) {
-        return Arrays.stream(TypeFiguresEnum.values()).filter(f -> f.getOption() == option).findFirst().orElseThrow(NoSuchElementException::new);
-    }
     
-    public static MenuOptionsEnum getMenuOpcion(int option) {
-        return Arrays.stream(MenuOptionsEnum.values()).filter(f -> f.getOption() == option).findFirst().orElseThrow(NoSuchElementException::new);
-    }
 }
