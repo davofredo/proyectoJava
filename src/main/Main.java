@@ -1,21 +1,18 @@
 package main;
-//import constants.*;
-//import figures.*;
-//import interfaces.*;
-//import javax.swing.*;
-//import java.util.Arrays;
-//import java.util.NoSuchElementException;
-import gui.*;
+import com.at.internship.figures.gui.*;
 public class Main {
 
    public static void main(String[] args) {
-//	   	//Main menu
-	   Window mainWindow = new Window();
-	   mainWindow.generateMainWindow();
+   	//Main menu
+   
+	LooknFeel looknFeel= new LooknFeel(true);    
 	   
 	   
-	   Window FiguresWindow = new Window();
-	   FiguresWindow.generateFiguresWindow();
+//   Window mainWindow = new Window();
+//   mainWindow.generateMainWindow();
+//   
+//   Window FiguresWindow = new Window();
+//   FiguresWindow.generateFiguresWindow();
 	   	   
 //	   MenuOptionsEnum[] menu = MenuOptionsEnum.values();
 //	   StringBuilder sb_menu = new StringBuilder(Messages.MENU);

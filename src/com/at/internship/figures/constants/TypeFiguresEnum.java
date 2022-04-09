@@ -1,4 +1,4 @@
-package constants;
+package com.at.internship.figures.constants;
 
 public enum TypeFiguresEnum {
     CIRCLE("Circle",1),

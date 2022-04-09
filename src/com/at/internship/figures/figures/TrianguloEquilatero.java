@@ -1,7 +1,7 @@
-package figures;
+package com.at.internship.figures.figures;
 
-import abstracts.Triangulo;
-import interfaces.IMedidas;
+import com.at.internship.figures.abstracts.Triangulo;
+import com.at.internship.figures.interfaces.IMedidas;
 
 public class TrianguloEquilatero extends Triangulo implements IMedidas {
 

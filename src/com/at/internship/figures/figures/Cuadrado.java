@@ -1,7 +1,7 @@
-package figures;
+package com.at.internship.figures.figures;
 
-import abstracts.FiguraGeometrica;
-import interfaces.IMedidas;
+import com.at.internship.figures.abstracts.FiguraGeometrica;
+import com.at.internship.figures.interfaces.IMedidas;
 
 public class Cuadrado extends FiguraGeometrica implements IMedidas {
 

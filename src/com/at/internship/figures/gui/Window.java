@@ -1,5 +1,4 @@
-package gui; 
-import constants.*;
+package com.at.internship.figures.gui; 
 //import figures.*;
 //import interfaces.*;
 //import javax.swing.*;
@@ -8,11 +7,13 @@ import java.util.NoSuchElementException;
 //import gui.*;
 import javax.swing.JOptionPane;
 
+import com.at.internship.figures.constants.*;
+
 public class Window {
 	private int option;
 	
 	//Main menu
-	public constants.MenuOptionsEnum generateMainWindow() {
+	public com.at.internship.figures.constants.MenuOptionsEnum generateMainWindow() {
 		
 		MenuOptionsEnum[] menu = MenuOptionsEnum.values();
 		
@@ -22,7 +23,7 @@ public class Window {
 		}
    	
 	    this.option= Integer.parseInt(JOptionPane.showInputDialog(sb_menu.toString()));
-	    constants.MenuOptionsEnum menu_option= getMenuOpcion(this.option);
+	    com.at.internship.figures.constants.MenuOptionsEnum menu_option= getMenuOpcion(this.option);
 	    System.out.println(menu_option);
 	    
 	    return menu_option;
@@ -30,7 +31,7 @@ public class Window {
 	}
 	
 	//Figures Menu
-	public constants.TypeFiguresEnum generateFiguresWindow() {
+	public com.at.internship.figures.constants.TypeFiguresEnum generateFiguresWindow() {
 	   	
 	   	StringBuilder sb = new StringBuilder(Messages.INPUT_FIGURE_OPTION);
 	   	TypeFiguresEnum[] figures = TypeFiguresEnum.values();
@@ -40,7 +41,7 @@ public class Window {
 	    }
 	    
 	    this.option = Integer.parseInt(JOptionPane.showInputDialog(sb.toString()));
-	    constants.TypeFiguresEnum figure  = getNameFigura(this.option);	
+	    com.at.internship.figures.constants.TypeFiguresEnum figure  = getNameFigura(this.option);	
 	    System.out.println(figure);
 	    
 	    return figure;

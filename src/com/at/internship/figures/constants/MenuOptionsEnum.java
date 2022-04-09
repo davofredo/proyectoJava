@@ -1,4 +1,4 @@
-package constants;
+package com.at.internship.figures.constants;
 
 public enum MenuOptionsEnum {
 	REGISTER("Register a new figure calculation",1),

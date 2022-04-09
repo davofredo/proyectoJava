@@ -1,4 +1,4 @@
-package abstracts;
+package com.at.internship.figures.abstracts;
 
 public class FiguraGeometrica {
 
