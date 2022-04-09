@@ -1,6 +1,6 @@
 package main;
 import com.at.internship.figures.gui.*;
-import com.at.internship.figures.interfaces.IMedidas;
+import com.at.internship.figures.interfaces.IMasures;
 import javax.swing.JOptionPane;
 
 import com.at.internship.figures.*;

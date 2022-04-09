@@ -1,13 +1,13 @@
 package com.at.internship.figures.figures;
 
-import com.at.internship.figures.abstracts.Triangulo;
-import com.at.internship.figures.interfaces.IMedidas;
+import com.at.internship.figures.abstracts.Triangle;
+import com.at.internship.figures.interfaces.IMasures;
 
-public class TrianguloEquilatero extends Triangulo implements IMedidas {
+public class TriangleEquilateral extends Triangle implements IMasures {
 
     private double lado;
 
-    public TrianguloEquilatero(double lado) {
+    public TriangleEquilateral(double lado) {
         this.lado = lado;
         super.altura = this.calculateHeight();
     }

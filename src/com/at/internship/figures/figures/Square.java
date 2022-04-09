@@ -1,13 +1,13 @@
 package com.at.internship.figures.figures;
 
-import com.at.internship.figures.abstracts.FiguraGeometrica;
-import com.at.internship.figures.interfaces.IMedidas;
+import com.at.internship.figures.abstracts.GeometricFigure;
+import com.at.internship.figures.interfaces.IMasures;
 
-public class Cuadrado extends FiguraGeometrica implements IMedidas {
+public class Square extends GeometricFigure implements IMasures {
 
     private double lado;
 
-    public Cuadrado(double lado) {
+    public Square(double lado) {
         this.lado = lado;
     }
 

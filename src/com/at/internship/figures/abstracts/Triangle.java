@@ -1,6 +1,6 @@
 package com.at.internship.figures.abstracts;
 
-public abstract class Triangulo extends FiguraGeometrica {
+public abstract class Triangle extends GeometricFigure {
 
     protected double altura;
 

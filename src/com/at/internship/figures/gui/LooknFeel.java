@@ -1,6 +1,6 @@
 package com.at.internship.figures.gui;
 import com.at.internship.figures.figures.*;
-import com.at.internship.figures.interfaces.IMedidas;
+import com.at.internship.figures.interfaces.IMasures;
 import javax.swing.JOptionPane;
 import com.at.internship.figures.constants.*;
 /*
@@ -58,39 +58,39 @@ public class LooknFeel {
 	}
 	
 	private void guiFigureInterface(TypeFiguresEnum figure_choosen) {
-		IMedidas medidas = null;
+		IMasures measures = null;
 
 		switch(figure_choosen) {
 			case CIRCLE:
-				double radio = Double.parseDouble(JOptionPane.showInputDialog(String.format(Messages.INPUT_RADIUS, Messages.UNIT_CM)));
-				medidas = new Circulo(radio);
+				double radius = Double.parseDouble(JOptionPane.showInputDialog(String.format(Messages.INPUT_RADIUS, Messages.UNIT_CM)));
+				measures = new Circle(radius);
 				break;
 		
 			case SQUARE:
-				double lado = Double.parseDouble(JOptionPane.showInputDialog(String.format(Messages.INPUT_SIDE, Messages.UNIT_CM)));
-				medidas = new Cuadrado(lado);
+				double side = Double.parseDouble(JOptionPane.showInputDialog(String.format(Messages.INPUT_SIDE, Messages.UNIT_CM)));
+				measures = new Square(side);
 				break;
 		
 			case RECTANGLE:
 				double base = Double.parseDouble(JOptionPane.showInputDialog(String.format(Messages.INPUT_BASE, Messages.UNIT_CM)));
 				double altura = Double.parseDouble(JOptionPane.showInputDialog(String.format(Messages.INPUT_HEIGHT, Messages.UNIT_CM)));
-				medidas = new Rectangulo(base, altura);
+				measures = new Rectangle(base, altura);
 				break;
 		
 			case EQUILATERAL_TRIANGLE:
-				lado = Double.parseDouble(JOptionPane.showInputDialog(String.format(Messages.INPUT_SIDE, Messages.UNIT_CM)));
-				medidas = new TrianguloEquilatero(lado);
+				side = Double.parseDouble(JOptionPane.showInputDialog(String.format(Messages.INPUT_SIDE, Messages.UNIT_CM)));
+				measures = new TriangleEquilateral(side);
 				break;
 		
 			case ISOSCELES_TRIANGLE:
-				lado = Double.parseDouble(JOptionPane.showInputDialog(String.format(Messages.INPUT_SIDE, Messages.UNIT_CM)));
+				side = Double.parseDouble(JOptionPane.showInputDialog(String.format(Messages.INPUT_SIDE, Messages.UNIT_CM)));
 				base = Double.parseDouble(JOptionPane.showInputDialog(String.format(Messages.INPUT_BASE, Messages.UNIT_CM)));
-				medidas = new TrianguloIsosceles(lado, base);
+				measures = new TriangleIsosceles(side, base);
 				break;
 		}//Switch end
 		
-		String message = "The figure was a " + figure_choosen+ ", its Perimter is: " + medidas.calculatePerimeter() + "cm and its Area: " + medidas.calculateArea()+ "cm2";
-		//		String message = "The figure was a" + Window.getNameFigura(1)+ ", its Perimter is: " + medidas.calculatePerimeter() + "cm and its Area: " + medidas.calculateArea()+ "cm2";
+		String message = "The figure was a " + figure_choosen+ ", its Perimter is: " + measures.calculatePerimeter() + "cm and its Area is: " + measures.calculateArea()+ "cm2";
+		//		String message = "The figure was a" + Window.getNameFigura(1)+ ", its Perimter is: " + measures.calculatePerimeter() + "cm and its Area: " + measures.calculateArea()+ "cm2";
 		System.out.println(message);
 	}
 	

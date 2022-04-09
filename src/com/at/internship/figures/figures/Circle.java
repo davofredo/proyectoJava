@@ -1,13 +1,13 @@
 package com.at.internship.figures.figures;
 
-import com.at.internship.figures.abstracts.FiguraGeometrica;
-import com.at.internship.figures.interfaces.IMedidas;
+import com.at.internship.figures.abstracts.GeometricFigure;
+import com.at.internship.figures.interfaces.IMasures;
 
-public class Circulo extends FiguraGeometrica implements IMedidas {
+public class Circle extends GeometricFigure implements IMasures {
 
     private double radio;
 
-    public Circulo(double radio) {
+    public Circle(double radio) {
         this.radio = radio;
     }
 

@@ -1,14 +1,14 @@
 package com.at.internship.figures.figures;
 
-import com.at.internship.figures.abstracts.FiguraGeometrica;
-import com.at.internship.figures.interfaces.IMedidas;
+import com.at.internship.figures.abstracts.GeometricFigure;
+import com.at.internship.figures.interfaces.IMasures;
 
-public class Rectangulo extends FiguraGeometrica implements IMedidas {
+public class Rectangle extends GeometricFigure implements IMasures {
 
     private double base;
     private double altura;
 
-    public Rectangulo(double base, double altura) {
+    public Rectangle(double base, double altura) {
         this.base = base;
         this.altura = altura;
     }

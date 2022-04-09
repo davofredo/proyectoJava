@@ -1,14 +1,14 @@
 package com.at.internship.figures.figures;
 
-import com.at.internship.figures.abstracts.Triangulo;
-import com.at.internship.figures.interfaces.IMedidas;
+import com.at.internship.figures.abstracts.Triangle;
+import com.at.internship.figures.interfaces.IMasures;
 
-public class TrianguloIsosceles extends Triangulo implements IMedidas {
+public class TriangleIsosceles extends Triangle implements IMasures {
 
     private double lado;
     private double base;
 
-    public TrianguloIsosceles(double lado, double base) {
+    public TriangleIsosceles(double lado, double base) {
         this.lado = lado;
         this.base = base;
         super.altura = this.calculateHeight();
