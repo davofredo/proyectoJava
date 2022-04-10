@@ -23,6 +23,9 @@ These links were added because contains web pages related to some important theo
         <li>
             <a href="https://www.tutorialspoint.com/determine-if-file-or-directory-exists-in-java#">Determine if a file/directory exists</a>
         </li>
+        <li>
+            <a href="https://www.w3schools.com/java/java_files_create.asp">FileWritter tutorial</a>
+        </li> 
     </ul>
 </div>
 
