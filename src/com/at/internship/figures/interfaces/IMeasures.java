@@ -1,6 +1,6 @@
 package com.at.internship.figures.interfaces;
 
-public interface IMasures {
+public interface IMeasures {
 
     double calculatePerimeter();
 

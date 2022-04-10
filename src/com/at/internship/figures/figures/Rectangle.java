@@ -1,9 +1,9 @@
 package com.at.internship.figures.figures;
 
 import com.at.internship.figures.abstracts.GeometricFigure;
-import com.at.internship.figures.interfaces.IMasures;
+import com.at.internship.figures.interfaces.IMeasures;
 
-public class Rectangle extends GeometricFigure implements IMasures {
+public class Rectangle extends GeometricFigure implements IMeasures {
 
     private double base;
     private double altura;

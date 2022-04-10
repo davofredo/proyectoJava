@@ -1,15 +1,14 @@
 package com.at.internship.figures.constants;
 
-public enum MenuOptionsEnum {
-	REGISTER("Register a new figure calculation",1)
-	,OPEN("Open file with calculation's contents", 2)
-	,EXIT("Exit program", 3)
-	,WRONG("WRONG", 4);
+public enum FoldersnFilesEnum {
+	
+	MATHEMATICAL("mathematical_calculations/",1)
+	,FILE_EXTENSION(".txt",2);
 	
 	private final String name;
     private final int option;
 
-    MenuOptionsEnum(String name, int option) {
+    FoldersnFilesEnum(String name, int option) {
         this.name = name;
         this.option = option;
     }
@@ -21,5 +20,4 @@ public enum MenuOptionsEnum {
     public int getOption() {
         return option;
     }
-
 }

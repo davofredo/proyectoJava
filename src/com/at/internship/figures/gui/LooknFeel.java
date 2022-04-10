@@ -1,6 +1,6 @@
 package com.at.internship.figures.gui;
 import com.at.internship.figures.figures.*;
-import com.at.internship.figures.interfaces.IMasures;
+import com.at.internship.figures.interfaces.IMeasures;
 import javax.swing.JOptionPane;
 import com.at.internship.figures.constants.*;
 /*
@@ -61,7 +61,7 @@ public class LooknFeel {
 	}
 	
 	private void guiFigureInterface(TypeFiguresEnum figure_choosen) {
-		IMasures measures = null;
+		IMeasures measures = null;
 
 		switch(figure_choosen) {
 			case CIRCLE:

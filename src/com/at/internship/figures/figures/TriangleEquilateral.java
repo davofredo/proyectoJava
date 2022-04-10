@@ -1,9 +1,9 @@
 package com.at.internship.figures.figures;
 
 import com.at.internship.figures.abstracts.Triangle;
-import com.at.internship.figures.interfaces.IMasures;
+import com.at.internship.figures.interfaces.IMeasures;
 
-public class TriangleEquilateral extends Triangle implements IMasures {
+public class TriangleEquilateral extends Triangle implements IMeasures {
 
     private double lado;
 
