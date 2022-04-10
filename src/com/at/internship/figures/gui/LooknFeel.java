@@ -33,9 +33,10 @@ public class LooknFeel {
 	//Contains all logical rules for managing the app's GUI interface
 	private void guiInterface(boolean guiInterface) {
 			
-		MenuOptionsEnum main_option=mainWindow();
-		
+				
 		if (guiInterface==true) {
+			MenuOptionsEnum main_option=mainWindow();
+			
 			switch (main_option) {
 				case REGISTER:
 					
@@ -48,9 +49,11 @@ public class LooknFeel {
 					break;
 				case EXIT: 
 					System.out.println(main_option);	
+					guiInterface(false);
 					break;
 				default:
 					mainWindow.invalidOptionWindow();
+					guiInterface(true);
 
 			}	
 				
@@ -62,34 +65,43 @@ public class LooknFeel {
 
 		switch(figure_choosen) {
 			case CIRCLE:
-				double radius = Double.parseDouble(JOptionPane.showInputDialog(String.format(Messages.INPUT_RADIUS, Messages.UNIT_CM)));
+				double radius = Double.parseDouble(JOptionPane.showInputDialog
+						(String.format(Messages.INPUT_RADIUS, Messages.UNIT_CM)));
 				measures = new Circle(radius);
 				break;
 		
 			case SQUARE:
-				double side = Double.parseDouble(JOptionPane.showInputDialog(String.format(Messages.INPUT_SIDE, Messages.UNIT_CM)));
+				double side = Double.parseDouble(JOptionPane.showInputDialog
+						(String.format(Messages.INPUT_SIDE, Messages.UNIT_CM)));
 				measures = new Square(side);
 				break;
 		
 			case RECTANGLE:
-				double base = Double.parseDouble(JOptionPane.showInputDialog(String.format(Messages.INPUT_BASE, Messages.UNIT_CM)));
-				double altura = Double.parseDouble(JOptionPane.showInputDialog(String.format(Messages.INPUT_HEIGHT, Messages.UNIT_CM)));
+				double base = Double.parseDouble(JOptionPane.showInputDialog
+						(String.format(Messages.INPUT_BASE, Messages.UNIT_CM)));
+				double altura = Double.parseDouble(JOptionPane.showInputDialog
+						(String.format(Messages.INPUT_HEIGHT, Messages.UNIT_CM)));
 				measures = new Rectangle(base, altura);
 				break;
 		
 			case EQUILATERAL_TRIANGLE:
-				side = Double.parseDouble(JOptionPane.showInputDialog(String.format(Messages.INPUT_SIDE, Messages.UNIT_CM)));
+				side = Double.parseDouble(JOptionPane.showInputDialog
+						(String.format(Messages.INPUT_SIDE, Messages.UNIT_CM)));
 				measures = new TriangleEquilateral(side);
 				break;
 		
 			case ISOSCELES_TRIANGLE:
-				side = Double.parseDouble(JOptionPane.showInputDialog(String.format(Messages.INPUT_SIDE, Messages.UNIT_CM)));
-				base = Double.parseDouble(JOptionPane.showInputDialog(String.format(Messages.INPUT_BASE, Messages.UNIT_CM)));
+				side = Double.parseDouble(JOptionPane.showInputDialog
+						(String.format(Messages.INPUT_SIDE, Messages.UNIT_CM)));
+				base = Double.parseDouble(JOptionPane.showInputDialog
+						(String.format(Messages.INPUT_BASE, Messages.UNIT_CM)));
 				measures = new TriangleIsosceles(side, base);
 				break;
 		}//Switch end
 		
-		String message = "The figure was a " + figure_choosen+ ", its Perimter is: " + measures.calculatePerimeter() + "cm and its Area is: " + measures.calculateArea()+ "cm2";
+		String message = "The figure was a " + figure_choosen+ ", its Perimter is: " 
+						+ measures.calculatePerimeter() + "cm and its Area is: " 
+						+ measures.calculateArea()+ "cm2";
 		//		String message = "The figure was a" + Window.getNameFigura(1)+ ", its Perimter is: " + measures.calculatePerimeter() + "cm and its Area: " + measures.calculateArea()+ "cm2";
 		
 		JOptionPane.showMessageDialog(null, message,
