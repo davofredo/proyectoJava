@@ -20,4 +20,7 @@ public class Messages {
     //Exceptions
     public static final String EXCEPTION_1_ORIGIN= "Input error";
     public static final String EXCEPTION_1_DESCRIPTION="You typed an option not available";
+    
+    //Output
+    public static final String RESULT="The mathematical result is";
 }

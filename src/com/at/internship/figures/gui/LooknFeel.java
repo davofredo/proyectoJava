@@ -91,7 +91,12 @@ public class LooknFeel {
 		
 		String message = "The figure was a " + figure_choosen+ ", its Perimter is: " + measures.calculatePerimeter() + "cm and its Area is: " + measures.calculateArea()+ "cm2";
 		//		String message = "The figure was a" + Window.getNameFigura(1)+ ", its Perimter is: " + measures.calculatePerimeter() + "cm and its Area: " + measures.calculateArea()+ "cm2";
+		
+		JOptionPane.showMessageDialog(null, message,
+			      Messages.RESULT, JOptionPane.DEFAULT_OPTION);
 		System.out.println(message);
+		guiInterface(true);
+		
 	}
 	
 	
