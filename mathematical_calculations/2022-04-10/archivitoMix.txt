@@ -1,0 +1,5 @@
+2022-04-10
+The figure was a SQUARE
+Perimter=16.0cm 
+Area=16.0cm2
+

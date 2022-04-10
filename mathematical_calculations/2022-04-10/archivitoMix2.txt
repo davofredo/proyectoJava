@@ -1,0 +1,5 @@
+2022-04-10
+The figure was a EQUILATERAL_TRIANGLE
+Perimter=15.0cm 
+Area=10.825317547305481cm2
+

@@ -1,5 +1,7 @@
 package com.at.internship.figures.gui;
 import com.at.internship.figures.figures.*;
+import com.at.internship.figures.fileManager.FileCreatorModifier;
+import com.at.internship.figures.fileManager.FileManager;
 import com.at.internship.figures.interfaces.IMeasures;
 import javax.swing.JOptionPane;
 import com.at.internship.figures.constants.*;
@@ -99,20 +101,42 @@ public class LooknFeel {
 				break;
 		}//Switch end
 		
-		String message = "The figure was a " + figure_choosen+ ", its Perimter is: " 
-						+ measures.calculatePerimeter() + "cm and its Area is: " 
-						+ measures.calculateArea()+ "cm2";
-		//		String message = "The figure was a" + Window.getNameFigura(1)+ ", its Perimter is: " + measures.calculatePerimeter() + "cm and its Area: " + measures.calculateArea()+ "cm2";
+		//Creating or modifying file
 		
-		JOptionPane.showMessageDialog(null, message,
-			      Messages.RESULT, JOptionPane.DEFAULT_OPTION);
-		System.out.println(message);
-		guiInterface(true);
 		
+				
+		String mathematical_result = "The figure was a " + figure_choosen+ "\n" 
+									 +"Perimter="+ measures.calculatePerimeter() + "cm \n"
+									 +"Area="+measures.calculateArea()+ "cm2";
+		
+		
+		showingResults(mathematical_result);
 	}
 	
 	
-	
+	public void showingResults(String mathematical_result) {
+		
+		
+		FileManager fileManager = new FileManager();
+		String file_name=fileManager.generatingFilenDirectory();
+		
+		boolean success=fileManager.modifyingFile(mathematical_result, file_name);
+		
+		JOptionPane.showMessageDialog(null, mathematical_result,
+			      Messages.RESULT, JOptionPane.DEFAULT_OPTION);
+		System.out.println(mathematical_result);
+		
+		if (success) 
+			JOptionPane.showMessageDialog(null, Messages.FILE_OK,
+				      Messages.DISCLAIMER, JOptionPane.DEFAULT_OPTION);
+		else
+			JOptionPane.showMessageDialog(null, mathematical_result,
+				      Messages.FILE_WRONG, JOptionPane.NO_OPTION);
+		
+		
+		guiInterface(true);
+		
+	}
 	//1st window method - all steps for generating it
 	//is in this method and Window class
 	private MenuOptionsEnum mainWindow() {

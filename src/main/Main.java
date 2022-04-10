@@ -1,5 +1,7 @@
 package main;
 
+import java.util.Scanner;
+
 //Uncomment line's below after tests
 import com.at.internship.*;
 import com.at.internship.figures.fileManager.FileManager;
@@ -10,10 +12,10 @@ public class Main {
    	//Main menu
    
 	LooknFeel looknFeel= new LooknFeel(true);   
-	FileManager fileManager = new FileManager();
-	fileManager.generatingFilenDirectory();
+	   
 	
-	
+	   
+	   
     }
     
 }

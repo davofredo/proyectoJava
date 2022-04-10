@@ -1,6 +1,8 @@
 package com.at.internship.figures.fileManager;
 
 import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.time.LocalDate;
 import com.at.internship.figures.constants.FoldersnFilesEnum;
 /*
@@ -13,11 +15,13 @@ public class FileManager {
 
 	/*Methods
 	*------------------------------------------------------------*/
-	public boolean generatingFilenDirectory() {
-		boolean success=false;
-		FileCreator file=new FileCreator(getDirectory());
+	public String generatingFilenDirectory() {
 		
-		return success;
+		FileCreatorModifier fileModifier=new FileCreatorModifier(getDirectory());
+		
+		String file_name=fileModifier.generatingFile(folderName);
+		
+		return file_name;
 	}
 	
 	
@@ -74,6 +78,25 @@ public class FileManager {
 		return currentDate;
 	}
 	
+	
+	public boolean modifyingFile(String mathematical_result, String file_name) {
+		//default value
+		boolean success=false;
+		String file_content= getCurrentDate()+"\n"+mathematical_result+"\n\n";
+		
+		try {
+		      FileWriter fileWritter = new FileWriter(file_name);
+		      fileWritter.write(file_content);
+		      fileWritter.close();
+		      success=true;
+		    } catch (IOException e) {
+		      success=false;
+		      System.out.println("An error occurred.");
+		      e.printStackTrace();
+		    }
+		
+		return success;
+	}
 	
 	
 }
