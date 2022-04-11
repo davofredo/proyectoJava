@@ -4,7 +4,9 @@ import com.at.internship.figures.fileManager.FileCreatorModifier;
 import com.at.internship.figures.fileManager.FileManager;
 import com.at.internship.figures.interfaces.IMeasures;
 
+import java.awt.Desktop;
 import java.io.File;
+import java.io.IOException;
 
 import javax.swing.JOptionPane;
 import com.at.internship.figures.constants.*;
@@ -16,7 +18,7 @@ import com.at.internship.figures.constants.*;
  * 		Without this class it is not possible getting the GUI 
  * 		interface and anything else.
  * */
-public class LooknFeel {
+public class LooknFeel  {
 	
 	//Attributes
 	//------------------------------------------------------------
@@ -147,6 +149,12 @@ public class LooknFeel {
 	    String fileAuxName=directoryContents[fileOption-1];
 	    System.out.println("Escogiste abrir el archivo: "+fileAuxName);
 	    
+	    fileAuxName=getMathematicalOperationsDir()+dirAuxName+"\\"+fileAuxName;
+
+	    System.out.println(fileAuxName);
+	    
+	    openFile(fileAuxName);
+	    
 	    guiInterface(true);
 	    
 	}
@@ -206,6 +214,27 @@ public class LooknFeel {
 		} catch ( Exception e) {e.getMessage();}
 		
 		return figure_choosen;
+	}
+	
+	public void openFile(String fileName) {
+	 try {
+	        Runtime obj = Runtime.getRuntime();
+	        //La instrucción es notepad para abrir el bloc de notas, espacio
+	//y la ruta donde esta el archivo
+	obj.exec("notepad "+fileName);
+
+	//Pueden usar System.getProperty("user.dir") Obtiene la ruta del proyecto
+	} catch (IOException ex) {
+	     System.out.println("IOException "+ex.getMessage());
+	}
+		
+		
+//		try {
+//			File file_aux = new File(fileName);
+//			Desktop.getDesktop().open(file_aux);
+//		}catch(Exception e) {
+//			e.getMessage();
+//		}
 	}
 	
 	
