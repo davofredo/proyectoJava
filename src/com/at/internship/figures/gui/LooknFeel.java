@@ -18,7 +18,7 @@ import com.at.internship.figures.constants.*;
  * 		Without this class it is not possible getting the GUI 
  * 		interface and anything else.
  * */
-public class LooknFeel  {
+public class LooknFeel{
 	
 	//Attributes
 	//------------------------------------------------------------
@@ -105,6 +105,10 @@ public class LooknFeel  {
 						(String.format(Messages.INPUT_BASE, Messages.UNIT_CM)));
 				measures = new TriangleIsosceles(side, base);
 				break;
+			default:
+				mainWindow.invalidOptionWindow();
+				guiInterface(true);
+				break;
 		}//Switch end
 		
 		//Creating or modifying file
@@ -165,7 +169,6 @@ public class LooknFeel  {
 		
 		FileManager fileManager = new FileManager();
 		String file_name=fileManager.generatingFilenDirectory();
-		
 		boolean success=fileManager.modifyingFile(mathematical_result, file_name);
 		
 		JOptionPane.showMessageDialog(null, mathematical_result,
@@ -237,6 +240,4 @@ public class LooknFeel  {
 //			e.getMessage();
 //		}
 	}
-	
-	
 }

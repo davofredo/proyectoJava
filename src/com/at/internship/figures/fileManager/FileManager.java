@@ -11,7 +11,7 @@ import com.at.internship.figures.gui.LooknFeel;
  * DATE: 20220409
  * DEC: This class manages all related with files and folders
  * */
-public class FileManager {
+public class FileManager  {
 	
 	private String folderName;
 	

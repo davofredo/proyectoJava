@@ -62,6 +62,7 @@ public class Window {
 		for (int i = 0; i < contents.length; i++) {
 			sb.append("\n"+(i+1)+"- "+contents[i]+"\n");
 		}
+		 
 		int dir_option=Integer.parseInt(JOptionPane.showInputDialog(sb.toString()));
 		
 		return dir_option;
