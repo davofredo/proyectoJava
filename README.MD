@@ -4,6 +4,20 @@
 
 Alberto Israel Cruz Galvan
 
+## About
+
+The objective of this project is to practice all POO topics and Java features studied from the beginning of this internship to one topic before be introduced to Maven technology (this project does not include Maven and Unitary Testing). 
+
+## Topics implemented on this project
+- POO principles
+- Enumerates
+- StringBuilder class
+- String class
+- File and FileWriter for managing files logic
+- Implement exceptions
+- Use some packages of java language such as (services, constants, domain, utils, abstracts, etc)
+
+
 ## Useful Links
 These links were added because contains web pages related to some important theorical concepts that I applied in this project.
 <div>
