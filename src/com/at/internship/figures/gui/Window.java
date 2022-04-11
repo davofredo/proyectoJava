@@ -56,6 +56,27 @@ public class Window {
 	    return figure;
 	}
 	
+	
+	public int generateFileExplirerWindow(String contents[]) {
+		StringBuilder sb = new StringBuilder(Messages.FILE_EXPLORER_OPTION);
+		for (int i = 0; i < contents.length; i++) {
+			sb.append("\n"+(i+1)+"- "+contents[i]+"\n");
+		}
+		int dir_option=Integer.parseInt(JOptionPane.showInputDialog(sb.toString()));
+		
+		return dir_option;
+	}
+	
+	public int generateDirContentsWindow(String dirContents[]) {
+		StringBuilder sb = new StringBuilder(Messages.FILE_OPTION);
+		for (int i = 0; i < dirContents.length; i++) {
+			sb.append("\n"+(i+1)+"- "+dirContents[i]+"\n");
+		}
+		int dir_option=Integer.parseInt(JOptionPane.showInputDialog(sb.toString()));
+		
+		return dir_option;
+	}
+	
 	public void invalidOptionWindow() {
 		JOptionPane.showMessageDialog(null, Messages.EXCEPTION_1_DESCRIPTION,
 			      Messages.EXCEPTION_1_ORIGIN, JOptionPane.ERROR_MESSAGE);

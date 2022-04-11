@@ -5,14 +5,17 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDate;
 import com.at.internship.figures.constants.FoldersnFilesEnum;
+import com.at.internship.figures.gui.LooknFeel;
 /*
  * AUTHOR: ALBERTO CRUZ GALVAN INTERN 32
  * DATE: 20220409
  * DEC: This class manages all related with files and folders
  * */
 public class FileManager {
+	
 	private String folderName;
-
+	
+		
 	/*Methods
 	*------------------------------------------------------------*/
 	public String generatingFilenDirectory() {

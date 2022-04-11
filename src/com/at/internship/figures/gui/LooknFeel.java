@@ -3,6 +3,9 @@ import com.at.internship.figures.figures.*;
 import com.at.internship.figures.fileManager.FileCreatorModifier;
 import com.at.internship.figures.fileManager.FileManager;
 import com.at.internship.figures.interfaces.IMeasures;
+
+import java.io.File;
+
 import javax.swing.JOptionPane;
 import com.at.internship.figures.constants.*;
 /*
@@ -37,6 +40,7 @@ public class LooknFeel {
 			
 				
 		if (guiInterface==true) {
+			//Enum for watching options
 			MenuOptionsEnum main_option=mainWindow();
 			
 			switch (main_option) {
@@ -47,7 +51,7 @@ public class LooknFeel {
 					break;
 					
 				case OPEN: 
-					System.out.println(main_option);	
+					fileExplorerGUI();	
 					break;
 				case EXIT: 
 					System.out.println(main_option);	
@@ -114,6 +118,39 @@ public class LooknFeel {
 	}
 	
 	
+	public void fileExplorerGUI() {
+		String mathematicalDir=getMathematicalOperationsDir();
+		
+		//Creating a File object for directory
+	    File mathematicalDirFileAux = new File(mathematicalDir);
+	    //List of all files and directories
+	    String contents[] = mathematicalDirFileAux.list();
+	    for(int i=0; i<contents.length; i++) {
+	    	System.out.println(contents[i]);
+	    }
+	    //1st Window for showing directories
+	    Window fileExplorerWindow=new Window();
+	    
+	    int dirOption=fileExplorerWindow.generateFileExplirerWindow(contents);
+	     
+	    String dirAuxName=contents[dirOption-1];
+		
+	    //2nd Window for showing the content of the directory chosen
+	    File mathematicalFileAux=new File(mathematicalDir+"\\"+dirAuxName);
+	    String directoryContents[]=mathematicalFileAux.list();
+	    for (int i = 0; i < directoryContents.length; i++) {
+			System.out.println(directoryContents[i]);
+		}
+	    
+	    
+	    int fileOption=fileExplorerWindow.generateDirContentsWindow(directoryContents);
+	    String fileAuxName=directoryContents[fileOption-1];
+	    System.out.println("Escogiste abrir el archivo: "+fileAuxName);
+	    
+	    guiInterface(true);
+	    
+	}
+	
 	public void showingResults(String mathematical_result) {
 		
 		
@@ -137,6 +174,17 @@ public class LooknFeel {
 		guiInterface(true);
 		
 	}
+	
+	public String getMathematicalOperationsDir() {
+		
+		//We get the mathematical operations path
+		FoldersnFilesEnum folderEnum=FoldersnFilesEnum.MATHEMATICAL_2;
+		String mathematicalDir = System.getProperty("user.dir");
+		
+		
+		
+		return mathematicalDir +=("\\"+folderEnum.getName()+"\\");
+	}
 	//1st window method - all steps for generating it
 	//is in this method and Window class
 	private MenuOptionsEnum mainWindow() {
@@ -159,5 +207,6 @@ public class LooknFeel {
 		
 		return figure_choosen;
 	}
+	
 	
 }

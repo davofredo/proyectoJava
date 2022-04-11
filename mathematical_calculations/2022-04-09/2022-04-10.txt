@@ -1,0 +1,5 @@
+2022-04-10
+The figure was a RECTANGLE
+Perimter=90.0cm 
+Area=200.0cm2
+

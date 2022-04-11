@@ -3,7 +3,8 @@ package com.at.internship.figures.constants;
 public enum FoldersnFilesEnum {
 	
 	MATHEMATICAL("mathematical_calculations/",1)
-	,FILE_EXTENSION(".txt",2);
+	,FILE_EXTENSION(".txt",2)
+	,MATHEMATICAL_2("mathematical_calculations",2);
 	
 	private final String name;
     private final int option;

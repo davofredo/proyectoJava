@@ -44,6 +44,9 @@ public class FileCreatorModifier extends FileManager {
 				case 1: //It ask user for another name
 					process=true;
 					break;
+				default: 
+					process=true;
+					break;
 				}
 			}
 			else {//File's name is available

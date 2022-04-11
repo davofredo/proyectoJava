@@ -21,6 +21,10 @@ public class Messages {
     public static final String EXCEPTION_1_ORIGIN= "Input error";
     public static final String EXCEPTION_1_DESCRIPTION="You typed an option not available";
     
+    //Files
+    public static final String FILE_EXPLORER_OPTION="Type the number of the folder you want to explore";
+    public static final String FILE_OPTION="Type the number of the folder you want to open";
+    
     //Output
     public static final String RESULT="The mathematical result is";
     public static final String FILE_NAME="Type the file's name where the Mathematical operations will be saved";

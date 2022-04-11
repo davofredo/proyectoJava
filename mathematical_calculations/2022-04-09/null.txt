@@ -1,0 +1,5 @@
+2022-04-10
+The figure was a CIRCLE
+Perimter=75.39822368615503cm 
+Area=452.3893421169302cm2
+

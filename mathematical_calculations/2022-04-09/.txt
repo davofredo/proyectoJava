@@ -1,0 +1,5 @@
+2022-04-10
+The figure was a ISOSCELES_TRIANGLE
+Perimter=13.0cm 
+Area=7.806247497997997cm2
+
