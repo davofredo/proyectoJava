@@ -149,6 +149,7 @@ public class LooknFeel  {
 	    String fileAuxName=directoryContents[fileOption-1];
 	    System.out.println("Escogiste abrir el archivo: "+fileAuxName);
 	    
+	    
 	    fileAuxName=getMathematicalOperationsDir()+dirAuxName+"\\"+fileAuxName;
 
 	    System.out.println(fileAuxName);
