@@ -43,3 +43,21 @@ These links were added because contains web pages related to some important theo
     </ul>
 </div>
 
+## Feedback
+It was a good work. You kept things simple, what is very nice for maintainance. In addition, I can se that you got very well documented about user interfaces. I believe that the greatest downside in your work is validation, but in general, you did it very well!
+
+### Good Things
+- Using IMeasures to abstract shape measure implementations.
+- Separation of concerns between components.
+- Constants organization.
+- File override alert.
+- Use of enums for menu options and figure types
+
+### Things to Improve
+- Inputs for shape values were not validated.
+- Same case for file selection inputs.
+- It was clever to use recursive calls to guiInterface() instead of handling a main loop, but there were negative consequences due to this implementation. A clear example of this is the NullPointerException that appears at the end of the application, if you selected an incorrect shape option.
+- Use of enums for path constants does not make sense
+- Nice work with abstractions, but they can still be better. See TODO comments in GeometricFigure and Triangle.
+- See all the TODO comments to find more areas to improve.
+

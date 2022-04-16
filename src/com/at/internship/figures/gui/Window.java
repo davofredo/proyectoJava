@@ -28,11 +28,10 @@ public class Window {
 				sb_menu.append(String.format(Messages.FORMAT_OPTIONS, m.getOption(), m.getName()));
 			}
 		}
-   	
+
 	    this.option= Integer.parseInt(JOptionPane.showInputDialog(sb_menu.toString()));
 	    MenuOptionsEnum menu_option= getMenuOption(this.option);
 
-	    
 	    return menu_option;
 	    		
 	}

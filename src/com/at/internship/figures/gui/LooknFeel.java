@@ -61,11 +61,14 @@ public class LooknFeel{
 					break;
 				default:
 					mainWindow.invalidOptionWindow();
-					guiInterface(true);
+					guiInterface(true); // Very clever, but be careful with this approach
 
 			}	
 				
-		}else{System.out.println(Messages.SUPPORT_MESSAGE_1);}
+		}else{
+			// TODO: This message is displayed even when the user decides to exit.
+			System.out.println(Messages.SUPPORT_MESSAGE_1);
+		}
 	}
 	
 	private void guiFigureInterface(TypeFiguresEnum figure_choosen) {
@@ -73,40 +76,51 @@ public class LooknFeel{
 
 		switch(figure_choosen) {
 			case CIRCLE:
+				// TODO: Validate input to avoid crashes due to NumberFormatException
 				double radius = Double.parseDouble(JOptionPane.showInputDialog
 						(String.format(Messages.INPUT_RADIUS, Messages.UNIT_CM)));
 				measures = new Circle(radius);
 				break;
 		
 			case SQUARE:
+				// TODO: Validate input to avoid crashes due to NumberFormatException
 				double side = Double.parseDouble(JOptionPane.showInputDialog
 						(String.format(Messages.INPUT_SIDE, Messages.UNIT_CM)));
 				measures = new Square(side);
 				break;
 		
 			case RECTANGLE:
+				// TODO: Validate input to avoid crashes due to NumberFormatException
 				double base = Double.parseDouble(JOptionPane.showInputDialog
 						(String.format(Messages.INPUT_BASE, Messages.UNIT_CM)));
+				// TODO: Validate input to avoid crashes due to NumberFormatException
 				double altura = Double.parseDouble(JOptionPane.showInputDialog
 						(String.format(Messages.INPUT_HEIGHT, Messages.UNIT_CM)));
 				measures = new Rectangle(base, altura);
 				break;
 		
 			case EQUILATERAL_TRIANGLE:
+				// TODO: Validate input to avoid crashes due to NumberFormatException
 				side = Double.parseDouble(JOptionPane.showInputDialog
 						(String.format(Messages.INPUT_SIDE, Messages.UNIT_CM)));
 				measures = new TriangleEquilateral(side);
 				break;
 		
 			case ISOSCELES_TRIANGLE:
+				// TODO: Validate input to avoid crashes due to NumberFormatException
 				side = Double.parseDouble(JOptionPane.showInputDialog
 						(String.format(Messages.INPUT_SIDE, Messages.UNIT_CM)));
+				// TODO: Validate input to avoid crashes due to NumberFormatException
 				base = Double.parseDouble(JOptionPane.showInputDialog
 						(String.format(Messages.INPUT_BASE, Messages.UNIT_CM)));
 				measures = new TriangleIsosceles(side, base);
 				break;
 			default:
 				mainWindow.invalidOptionWindow();
+				// TODO: The idea was good, but the implementation has failures.
+				//  If you return to the main menu, without exiting this method,
+				//  the code below will eventually execute without a valid set of measures,
+				//  what could cause a NullPointerException
 				guiInterface(true);
 				break;
 		}//Switch end
@@ -114,7 +128,7 @@ public class LooknFeel{
 		//Creating or modifying file
 		
 		
-				
+		// TODO: This should not be executed if no valid measures were provided.
 		String mathematical_result = "The figure was a " + figure_choosen+ "\n" 
 									 +"Perimter="+ measures.calculatePerimeter() + "cm \n"
 									 +"Area="+measures.calculateArea()+ "cm2";
@@ -136,7 +150,8 @@ public class LooknFeel{
 	    }
 	    //1st Window for showing directories
 	    Window fileExplorerWindow=new Window();
-	    
+	    // TODO: ArrayIndexOutOfBoundsException is thrown when the user enters an invalid option number
+		// TODO: NumberFormatException is thrown when the user enters alphabetic characters.
 	    int dirOption=fileExplorerWindow.generateFileExplirerWindow(contents);
 	     
 	    String dirAuxName=contents[dirOption-1];
@@ -147,8 +162,9 @@ public class LooknFeel{
 	    for (int i = 0; i < directoryContents.length; i++) {
 			System.out.println(directoryContents[i]);
 		}
-	    
-	    
+
+		// TODO: ArrayIndexOutOfBoundsException is thrown when the user enters an invalid option number
+		// TODO: NumberFormatException is thrown when the user enters alphabetic characters.
 	    int fileOption=fileExplorerWindow.generateDirContentsWindow(directoryContents);
 	    String fileAuxName=directoryContents[fileOption-1];
 	    System.out.println("Escogiste abrir el archivo: "+fileAuxName);
@@ -205,7 +221,13 @@ public class LooknFeel{
 		MenuOptionsEnum main_option=MenuOptionsEnum.WRONG;
 		try {
 			main_option=mainWindow.generateMainWindow();
-		} catch (Exception e) {e.getMessage();} 
+		} catch (Exception e) {
+			// TODO: The exception is being caught, but no actions are taken.
+			//  Also, the value returned from e.getMessage is not being used.
+			//  In this case, you could return mainWindow.generateMainWindow() into the try body
+			//  and return MenuOptionsEnum.WRONG into the catch body.
+			e.getMessage();
+		}
 		
 		return main_option;		 
 	}
@@ -223,7 +245,7 @@ public class LooknFeel{
 	public void openFile(String fileName) {
 	 try {
 	        Runtime obj = Runtime.getRuntime();
-	        //La instrucción es notepad para abrir el bloc de notas, espacio
+	        //La instrucciï¿½n es notepad para abrir el bloc de notas, espacio
 	//y la ruta donde esta el archivo
 	obj.exec("notepad "+fileName);
 
